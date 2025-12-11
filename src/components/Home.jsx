@@ -1,12 +1,16 @@
 import React from "react";
 import HeroSlider from "./HeroSlider";
-import About from "./About";
+import AboutHome from "./AboutHome";
+import ServiceHome from './ServiceHome';
+import EventsHome from "./EventsHome";
 
 function Home() {
   return (
     <>
       <HeroSlider/>
-      <About/>
+      <AboutHome/>
+      <ServiceHome/>
+      <EventsHome/>
     </>
   );
 }

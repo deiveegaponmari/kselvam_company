@@ -6,9 +6,9 @@ import PublicLayout from './Layouts/PublicLayout';
 import Register from './pages/Register';
 import Login from './pages/Login';
 import Home from './components/Home';
-import About from './components/About';
-import Services from './components/ServicesCard';
-import Events from './components/EventsCard';
+import About from './pages/About';
+import Services from './pages/Services';
+import Events from './pages/Events';
 import Equipment from './components/EquipmentCard';
 import Contact from './components/Contact';
 function App() {

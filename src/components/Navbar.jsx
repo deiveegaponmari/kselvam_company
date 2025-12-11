@@ -31,7 +31,7 @@ function Navbar() {
       <AppBar
         position="sticky"
         sx={{
-          background: "#307cecff",
+          background: "#0f53b9ff",
           boxShadow: "0px 3px 10px rgba(0,0,0,0.15)",
         }}
       >
