@@ -9,8 +9,8 @@ import Home from './components/Home';
 import About from './pages/About';
 import Services from './pages/Services';
 import Events from './pages/Events';
-import Equipment from './components/EquipmentCard';
-import Contact from './components/Contact';
+import Equipment from './pages/Equipment';
+import Contact from './pages/Contact';
 function App() {
   const [count, setCount] = useState(0)
 
