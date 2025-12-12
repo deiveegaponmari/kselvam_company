@@ -9,7 +9,7 @@ function Contact() {
           Contact Us
         </h2>
 
-        <div className="grid md:grid-cols-2 gap-10">
+        <div className="grid md:grid-cols-2 gap-10 ">
           {/* Left Info Section */}
           <div className="bg-white p-8 rounded-xl shadow-lg">
             <h3 className="text-2xl font-semibold mb-4 text-gray-800">
@@ -37,13 +37,6 @@ function Contact() {
                 ✉️ <strong>Email:</strong> kselvamaudioshallowblocks@gmail.com
               </p>
             </div>
-
-            <iframe
-              className="mt-6 w-full h-56 rounded-xl"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d..."
-              allowFullScreen=""
-              loading="lazy"
-            ></iframe>
           </div>
 
           {/* Right Form Section */}
