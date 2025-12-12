@@ -30,7 +30,7 @@ function Contact() {
 
               </p>
               <p className="text-gray-700">
-                📞 <strong>Phone:</strong> +91 9843343962
+                📞 <strong>Phone:</strong> +91 9843343962 <br/>
                 📞 <strong>Phone:</strong> +91 6385457813
               </p>
               <p className="text-gray-700">
