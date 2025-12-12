@@ -30,7 +30,7 @@ function Equipment() {
     {
       title: "Sound Mixers & Controllers",
       desc: "Professional audio mixers, equalizers, audio interfaces, and controllers for any event size.",
-      img: "https://res.cloudinary.com/djlxdttvr/image/upload/v1765514682/WhatsApp_Video_2025-12-04_at_12.10.26_d8b4be12_jyovij.jpg",
+      img: "https://res.cloudinary.com/djlxdttvr/image/upload/v1765517102/dmitrii-e-SGF_LdtTOfA-unsplash_a8xbou.jpg",
     },
   ];
 

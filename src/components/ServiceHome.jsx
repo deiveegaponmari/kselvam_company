@@ -5,7 +5,7 @@ function ServiceHome() {
 const serviceLink=[
   "https://res.cloudinary.com/djlxdttvr/video/upload/v1765514682/WhatsApp_Video_2025-12-04_at_12.10.26_d8b4be12_jyovij.mp4",
   "https://res.cloudinary.com/djlxdttvr/image/upload/v1765514425/WhatsApp_Image_2025-12-04_at_12.12.08_873d1de0_whlv6k.jpg",
-  "https://res.cloudinary.com/djlxdttvr/image/upload/v1765514272/WhatsApp_Image_2025-12-04_at_12.15.00_24b3d111_tautcr.jpg"
+  "https://res.cloudinary.com/djlxdttvr/image/upload/v1765521845/WhatsApp_Image_2025-12-12_at_10.26.47_9a3af485_s9rhz4.jpg"
 ]
   return (
     <div className="p-10 md:p-20 bg-gray-100 text-gray-800 ">

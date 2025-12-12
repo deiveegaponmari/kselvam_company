@@ -18,19 +18,19 @@ function Services() {
       img: "https://res.cloudinary.com/djlxdttvr/image/upload/v1765514319/WhatsApp_Image_2025-12-04_at_12.15.24_b9979ad5_a08qiz.jpg",
     },
     {
-      title: "Silent Generator (DG) Services",
+      title: "All Generator (DG) Services",
       desc: "Reliable generator support for power backup during events, stage shows, and functions.",
-      img: "https://res.cloudinary.com/djlxdttvr/image/upload/v1765514493/WhatsApp_Image_2025-12-04_at_12.10.54_4487b1c5_-_Copy_li4m1g.jpg",
+      img: "https://res.cloudinary.com/djlxdttvr/image/upload/v1765514272/WhatsApp_Image_2025-12-04_at_12.15.00_24b3d111_tautcr.jpg",
     },
     {
       title: "Hollow Block Manufacturing",
       desc: "High-strength hollow blocks suitable for houses, commercial buildings, and construction projects.",
-      img: "https://res.cloudinary.com/djlxdttvr/image/upload/v1765514272/WhatsApp_Image_2025-12-04_at_12.15.00_24b3d111_tautcr.jpg",
+      img: "https://res.cloudinary.com/djlxdttvr/image/upload/v1765521988/WhatsApp_Image_2025-12-12_at_11.47.27_0868d8e6_r9bncs.jpg",
     },
     {
       title: "Event Management Support",
       desc: "From small family functions to large public events, we provide complete event support and coordination.",
-      img: "https://res.cloudinary.com/djlxdttvr/image/upload/v1765514682/WhatsApp_Video_2025-12-04_at_12.10.26_d8b4be12_jyovij.jpg",
+      img: "https://res.cloudinary.com/djlxdttvr/image/upload/v1765517080/alexander-ward-V6dNU_BuH70-unsplash_hzn8pd.jpg",
     },
   ];
 
@@ -70,7 +70,6 @@ function Services() {
               <p className="text-gray-600 mt-2 leading-relaxed">
                 {service.desc}
               </p>
-              <button>Book Now</button>
             </div>
           </div>
         ))}
