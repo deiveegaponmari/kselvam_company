@@ -23,13 +23,18 @@ function Contact() {
 
             <div className="mt-5 space-y-3">
               <p className="text-gray-700">
-                📍 <strong>Address:</strong> Your Company Address Here
+                📍 <strong>Address:</strong> K SELVAM SOUNDS & HOLLOW BLOCKS
+                KalitheerthanPatti,
+                Idaikal,
+                Tirunelveli-627423
+
               </p>
               <p className="text-gray-700">
-                📞 <strong>Phone:</strong> +91 98765 43210
+                📞 <strong>Phone:</strong> +91 9843343962
+                📞 <strong>Phone:</strong> +91 6385457813
               </p>
               <p className="text-gray-700">
-                ✉️ <strong>Email:</strong> info@kselvamsounds.com
+                ✉️ <strong>Email:</strong> kselvamaudioshallowblocks@gmail.com
               </p>
             </div>
 
