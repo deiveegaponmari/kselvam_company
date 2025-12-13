@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api=axios.create({
-    baseURL:"http://localhost:5000/api" //backend url
+    baseURL:"https://backend-kselvam-company-1.onrender.com/api" //backend url
 })
 
 //add a token to the request headers
