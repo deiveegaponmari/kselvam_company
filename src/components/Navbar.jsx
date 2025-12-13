@@ -53,7 +53,7 @@ function Navbar() {
                  display: { xs: "none", md: "block" },
               }}
             >
-              K Selvam Sounds & Hollow Blocks
+              K Selvam
             </Typography>
           </Box>
 
