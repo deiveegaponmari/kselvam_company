@@ -50,7 +50,7 @@ function Navbar() {
                 fontWeight: "bold",
                 fontSize: "20px",
                 whiteSpace: "nowrap",
-                 display: { xs: "block", md: "block" },
+                 display: { xs: "none", md: "block" },
               }}
             >
               K Selvam Sounds & Hollow Blocks
