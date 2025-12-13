@@ -72,7 +72,7 @@ function Footer() {
                 <Mail size={18} /> Email Us
               </h1>
               <p className="text-sm">
-                kselvamsounds@gmail.com  
+                kselvamaudioshallowblocks@gmail.com 
                 <br />
                 rajankmuthu99@gmail.com
               </p>
