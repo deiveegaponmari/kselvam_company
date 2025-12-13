@@ -37,7 +37,7 @@ function Navbar() {
       >
         <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
           {/* Logo + Title */}
-          <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+          <Box sx={{ display: "flex", alignItems: "center", gap: 1, flexGrow: 1,}}>
             <img
               src="https://res.cloudinary.com/djlxdttvr/image/upload/v1765348338/WhatsApp_Image_2025-12-08_at_15.19.34_f2d85b75_u6lcxz.jpg"
               alt="logo"
@@ -50,6 +50,7 @@ function Navbar() {
                 fontWeight: "bold",
                 fontSize: "20px",
                 whiteSpace: "nowrap",
+                 display: { xs: "none", md: "block" },
               }}
             >
               K Selvam Sounds & Hollow Blocks
