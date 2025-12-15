@@ -48,7 +48,7 @@ function Contact() {
             </div>
           </div>
 
-          <form ref={form} onSubmit={sendEmail} className="bg-white p-8 rounded-xl shadow-lg">
+          <form ref={form}  className="bg-white p-8 rounded-xl shadow-lg">
             <h3 className="text-2xl font-semibold text-gray-800 mb-6">Send a Message</h3>
 
             <div className="space-y-5">
@@ -56,7 +56,7 @@ function Contact() {
               <input type="email" name="user_email" placeholder="Your Email" className="w-full border p-3 rounded-md focus:ring-blue-300 outline-none" />
               <input type="text" name="subject" placeholder="Subject" className="w-full border p-3 rounded-md focus:ring-blue-300 outline-none" />
               <textarea name="message" placeholder="Your Message" rows="5" className="w-full border p-3 rounded-md focus:ring-blue-300 outline-none"></textarea>
-              <button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-md font-semibold transition">
+              <button type="submit"  onClick={sendEmail} className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-md font-semibold transition">
                 Send Message
               </button>
             </div>
