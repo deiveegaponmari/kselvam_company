@@ -8,7 +8,7 @@ function Contact() {
 
     emailjs.sendForm(
       "service_dxikh3c",   // Replace with your Service ID
-      "template_j142ox9",  // Replace with your Template ID
+      "template_44tk4gp",  // Replace with your Template ID
       form.current,
       "m2Ze3EooFmELn92wo"    // Replace with your Public Key
     )
@@ -33,6 +33,7 @@ function Contact() {
         </h2>
 
         <div className="grid md:grid-cols-2 gap-10">
+         {/*  left side */}
           <div className="bg-white p-8 rounded-xl shadow-lg">
             <h3 className="text-2xl font-semibold mb-4 text-gray-800">
               K Selvam Sounds & Hollow Blocks
@@ -46,7 +47,7 @@ function Contact() {
               <p className="text-gray-700">✉️ Email: kselvamaudioshallowblocks@gmail.com</p>
             </div>
           </div>
-
+             {/*  right side */}
           <form ref={form}  className="bg-white p-8 rounded-xl shadow-lg">
             <h3 className="text-2xl font-semibold text-gray-800 mb-6">Send a Message</h3>
 
