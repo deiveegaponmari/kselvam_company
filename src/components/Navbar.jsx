@@ -50,7 +50,7 @@ function Navbar() {
                 fontWeight: "bold",
                 fontSize: "20px",
                 whiteSpace: "nowrap",
-                 display: { xs: "none", md: "block" },
+                 display: { xs: "block", md: "block" },
               }}
             >
               K Selvam
