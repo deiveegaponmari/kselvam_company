@@ -40,10 +40,10 @@ function ServiceHome() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 mb-10">
           {service.map((item, index) => (
             <div
-              key={index}
+              key={item._id}
               className="w-full h-48 bg-gray-200 rounded-xl overflow-hidden shadow-md"
             >
-              {item.endsWith(".mp4") ? (
+              {item.imageUrl.endsWith(".mp4") ? (
                 <video
                   src={item.imageUrl}
                   className="w-full h-full object-cover"
