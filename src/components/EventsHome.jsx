@@ -1,6 +1,6 @@
 import { useState,useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-
+import api from '../api/apiConfig'
 function EventsHome() {
   const navigate = useNavigate();
    const [event, setEvent] = useState([]);
