@@ -17,11 +17,6 @@ function EventsHome() {
           console.error("Error fetching slides:", error);
         }
       };
-  const eventLinks = [
-    "https://res.cloudinary.com/djlxdttvr/image/upload/v1765514136/WhatsApp_Image_2025-12-04_at_12.11.39_4a0f850c_oxyfou.jpg",
-    "https://res.cloudinary.com/djlxdttvr/image/upload/v1765514319/WhatsApp_Image_2025-12-04_at_12.15.24_b9979ad5_a08qiz.jpg",
-    "https://res.cloudinary.com/djlxdttvr/image/upload/v1765514493/WhatsApp_Image_2025-12-04_at_12.10.54_4487b1c5_-_Copy_li4m1g.jpg",
-  ];
 
   return (
     <div className="p-10 md:p-20 bg-gray-100 text-gray-800 ">
