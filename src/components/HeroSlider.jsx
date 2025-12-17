@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { Autoplay } from "swiper/modules";
-const api = require("../api/apiConfig");
+import api from "../api/apiConfig";
 
 function HeroSlider() {
   const [imageSlides, setImageSlides] = useState([]);
