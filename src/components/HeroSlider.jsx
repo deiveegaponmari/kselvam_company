@@ -1,21 +1,28 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { Autoplay } from "swiper/modules";
-
+const api = require("../api/apiConfig");
 
 function HeroSlider() {
-  const imageSlides = [
-     "https://res.cloudinary.com/djlxdttvr/image/upload/v1765354524/WhatsApp_Image_2025-12-09_at_12.02.30_bfd6b6d7_nfukyb.jpg",
-    "https://res.cloudinary.com/djlxdttvr/image/upload/v1765354500/WhatsApp_Image_2025-12-09_at_11.56.18_ae185f1c_ne04rf.jpg",
-    "https://res.cloudinary.com/djlxdttvr/image/upload/v1765354523/WhatsApp_Image_2025-12-09_at_12.02.31_f4c86d44_lev4dy.jpg",
-    "https://res.cloudinary.com/djlxdttvr/image/upload/v1765522009/WhatsApp_Image_2025-12-12_at_11.47.28_be63289e_g9kdt9.jpg",
-    "https://res.cloudinary.com/djlxdttvr/image/upload/v1765522051/WhatsApp_Image_2025-12-12_at_11.53.03_59a244b4_opp1go.jpg"
-  ];
- 
+  const [imageSlides, setImageSlides] = useState([]);
+
+  useEffect(() => {
+    fetchSlides();
+  }, []);
+
+  const fetchSlides = async () => {
+    try {
+      const response = await api.get("/getslide");
+      console.log(response.data);
+      setImageSlides(response.data);
+    } catch (error) {
+      console.error("Error fetching slides:", error);
+    }
+  };
   return (
     <Swiper
-     modules={[Autoplay]}
+      modules={[Autoplay]}
       loop={true}
       autoplay={{ delay: 3000 }}
       spaceBetween={0}
@@ -51,8 +58,12 @@ function HeroSlider() {
 
       {/* Image Slides */}
       {imageSlides.map((img, index) => (
-        <SwiperSlide key={index}>
-          <img src={img} alt="slide" className="w-full h-[450px] object-cover" />
+        <SwiperSlide key={img._id}>
+          <img
+            src={img.imageUrl}
+            alt="slide"
+            className="w-full h-[450px] object-cover"
+          />
         </SwiperSlide>
       ))}
     </Swiper>
