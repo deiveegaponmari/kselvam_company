@@ -2,6 +2,21 @@ import { useNavigate } from "react-router-dom";
 
 function EventsHome() {
   const navigate = useNavigate();
+   const [event, setEvent] = useState([]);
+    
+      useEffect(() => {
+        fetchEvents();
+      }, []);
+    
+      const fetchEvents = async () => {
+        try {
+          const response = await api.get("/getevent");
+          //console.log(response.data);
+          setEvent(response.data);
+        } catch (error) {
+          console.error("Error fetching slides:", error);
+        }
+      };
   const eventLinks = [
     "https://res.cloudinary.com/djlxdttvr/image/upload/v1765514136/WhatsApp_Image_2025-12-04_at_12.11.39_4a0f850c_oxyfou.jpg",
     "https://res.cloudinary.com/djlxdttvr/image/upload/v1765514319/WhatsApp_Image_2025-12-04_at_12.15.24_b9979ad5_a08qiz.jpg",
@@ -20,13 +35,13 @@ function EventsHome() {
         </h1>
         {/* 🎉 EVENT IMAGE GRID */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 mb-10">
-          {eventLinks.map((item, index) => (
+          {event.map((item, index) => (
             <div
-              key={index}
+              key={item._id}
               className="w-full h-56 bg-gray-200 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
             >
               <img
-                src={item}
+                src={item.imageUrl}
                 alt="Event"
                 className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
               />

@@ -19,11 +19,6 @@ function ServiceHome() {
         console.error("Error fetching slides:", error);
       }
     };
-/* const serviceLink=[
-  "https://res.cloudinary.com/djlxdttvr/video/upload/v1765514682/WhatsApp_Video_2025-12-04_at_12.10.26_d8b4be12_jyovij.mp4",
-  "https://res.cloudinary.com/djlxdttvr/image/upload/v1765514425/WhatsApp_Image_2025-12-04_at_12.12.08_873d1de0_whlv6k.jpg",
-  "https://res.cloudinary.com/djlxdttvr/image/upload/v1765521845/WhatsApp_Image_2025-12-12_at_10.26.47_9a3af485_s9rhz4.jpg"
-] */
   return (
     <div className="p-10 md:p-20 bg-gray-100 text-gray-800 ">
       <div className="max-w-3xl mx-auto text-center ">
@@ -43,14 +38,14 @@ function ServiceHome() {
         </p>
          {/* 🔥 SERVICE MEDIA GRID */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 mb-10">
-          {serviceLink.map((item, index) => (
+          {service.map((item, index) => (
             <div
               key={index}
               className="w-full h-48 bg-gray-200 rounded-xl overflow-hidden shadow-md"
             >
               {item.endsWith(".mp4") ? (
                 <video
-                  src={item}
+                  src={item.imageUrl}
                   className="w-full h-full object-cover"
                   autoPlay
                   loop
