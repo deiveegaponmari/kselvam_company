@@ -14,7 +14,7 @@ function HeroSlider() {
   const fetchSlides = async () => {
     try {
       const response = await api.get("/getslide");
-      console.log(response.data);
+      //console.log(response.data);
       setImageSlides(response.data);
     } catch (error) {
       console.error("Error fetching slides:", error);
