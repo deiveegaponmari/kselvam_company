@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import api from '../api/apiConfig'
-import { useState } from "react";
+import { useState ,useEffect} from "react";
 
 function ServiceHome() {
   const navigate = useNavigate();
