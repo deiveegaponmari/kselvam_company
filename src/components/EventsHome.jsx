@@ -1,23 +1,23 @@
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import api from '../api/apiConfig'
+import api from "../api/apiConfig";
 function EventsHome() {
   const navigate = useNavigate();
-   const [event, setEvent] = useState([]);
-    
-      useEffect(() => {
-        fetchEvents();
-      }, []);
-    
-      const fetchEvents = async () => {
-        try {
-          const response = await api.get("/getevent");
-          //console.log(response.data);
-          setEvent(response.data);
-        } catch (error) {
-          console.error("Error fetching slides:", error);
-        }
-      };
+  const [event, setEvent] = useState([]);
+
+  useEffect(() => {
+    fetchEvents();
+  }, []);
+
+  const fetchEvents = async () => {
+    try {
+      const response = await api.get("/getevent");
+      //console.log(response.data);
+      setEvent(response.data);
+    } catch (error) {
+      console.error("Error fetching slides:", error);
+    }
+  };
 
   return (
     <div className="p-10 md:p-20 bg-gray-100 text-gray-800 ">
