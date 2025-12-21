@@ -1,4 +1,4 @@
-import React ,{useState}from "react";
+import React, { useState } from "react";
 import {
   AppBar,
   Toolbar,
@@ -14,10 +14,15 @@ import {
 } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
+import api from "../api/apiConfig";
 
 function Navbar() {
   const navigate = useNavigate();
   const [open, setOpen] = useState(false);
+  
+  const role = localStorage.getItem("role");
+  const isAdmin = role === "Admin";
+
   const links = [
     { label: "Home", path: "/" },
     { label: "About", path: "/about" },
@@ -37,7 +42,9 @@ function Navbar() {
       >
         <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
           {/* Logo + Title */}
-          <Box sx={{ display: "flex", alignItems: "center", gap: 1, flexGrow: 1,}}>
+          <Box
+            sx={{ display: "flex", alignItems: "center", gap: 1, flexGrow: 1 }}
+          >
             <img
               src="https://res.cloudinary.com/djlxdttvr/image/upload/v1765348338/WhatsApp_Image_2025-12-08_at_15.19.34_f2d85b75_u6lcxz.jpg"
               alt="logo"
@@ -50,7 +57,7 @@ function Navbar() {
                 fontWeight: "bold",
                 fontSize: "20px",
                 whiteSpace: "nowrap",
-                 display: { xs: "block", md: "block" },
+                display: { xs: "block", md: "block" },
               }}
             >
               K Selvam
@@ -79,6 +86,21 @@ function Navbar() {
                 {item.label}
               </Button>
             ))}
+            {/* ✅ Admin-only Bookings */}
+            {isAdmin && (
+              <Button
+                component={Link}
+                to="/admin/bookings"
+                sx={{
+                  color: "yellow",
+                  textTransform: "none",
+                  fontSize: "16px",
+                  fontWeight: "bold",
+                }}
+              >
+                Bookings
+              </Button>
+            )}
           </Box>
 
           {/* Mobile Menu Icon */}
@@ -116,6 +138,18 @@ function Navbar() {
                 </ListItemButton>
               </ListItem>
             ))}
+            {/* ✅ Admin-only Bookings (Mobile) */}
+            {isAdmin && (
+              <ListItem disablePadding>
+                <ListItemButton
+                  component={Link}
+                  to="/admin/bookings"
+                  onClick={() => setOpen(false)}
+                >
+                  <ListItemText primary="Bookings" />
+                </ListItemButton>
+              </ListItem>
+            )}
           </List>
         </Box>
       </Drawer>

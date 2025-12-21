@@ -17,7 +17,8 @@ function Login() {
     
       if(response.data.token){
         //store token to localstorage
-        localStorage.setItem("authToken",response.data.token)
+        localStorage.setItem("authToken",response.data.token);
+        localStorage.setItem("role",response.data.role)
       }
        navigate("/")
     }
