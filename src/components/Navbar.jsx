@@ -107,7 +107,6 @@ function Navbar() {
               to="/login"
               variant="outlined"
               sx={{
-                display: { xs: "block", md: "block" } ,
                 color: "white",
                 borderColor: "white",
                 textTransform: "none",
@@ -167,23 +166,16 @@ function Navbar() {
                 </ListItemButton>
               </ListItem>
             )}
-            {/* ✅ LOGIN BUTTON (Desktop) */}
-            <Button
-              component={Link}
-              to="/login"
-              variant="outlined"
-              sx={{
-                color: "white",
-                borderColor: "white",
-                textTransform: "none",
-                "&:hover": {
-                  background: "white",
-                  color: "#0f53b9ff",
-                },
-              }}
-            >
-              Login
-            </Button>
+            {/* ✅ LOGIN BUTTON (Mobile – Correct) */}
+            <ListItem disablePadding>
+              <ListItemButton
+                component={Link}
+                to="/login"
+                onClick={() => setOpen(false)}
+              >
+                <ListItemText primary="Login" />
+              </ListItemButton>
+            </ListItem>
           </List>
         </Box>
       </Drawer>
