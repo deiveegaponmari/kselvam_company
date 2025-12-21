@@ -19,7 +19,7 @@ import api from "../api/apiConfig";
 function Navbar() {
   const navigate = useNavigate();
   const [open, setOpen] = useState(false);
-  
+
   const role = localStorage.getItem("role");
   const isAdmin = role === "Admin";
 
@@ -29,7 +29,7 @@ function Navbar() {
     { label: "Services", path: "/services" },
     { label: "Events", path: "/events" },
     { label: "Equipments", path: "/equipments" },
-    { label: "Contact", path: "/contact" }
+    { label: "Contact", path: "/contact" },
   ];
   return (
     <>
@@ -101,10 +101,24 @@ function Navbar() {
                 Bookings
               </Button>
             )}
+            {/* ✅ LOGIN BUTTON (Desktop) */}
+            <Button
+              component={Link}
+              to="/login"
+              variant="outlined"
+              sx={{
+                color: "white",
+                borderColor: "white",
+                textTransform: "none",
+                "&:hover": {
+                  background: "white",
+                  color: "#0f53b9ff",
+                },
+              }}
+            >
+              Login
+            </Button>
           </Box>
-            <Button 
-            component={Link}
-            to="/login">LOGIN</Button>
           {/* Mobile Menu Icon */}
           <IconButton
             sx={{ color: "white", display: { xs: "block", md: "none" } }}
@@ -152,6 +166,23 @@ function Navbar() {
                 </ListItemButton>
               </ListItem>
             )}
+            {/* ✅ LOGIN BUTTON (Desktop) */}
+            <Button
+              component={Link}
+              to="/login"
+              variant="outlined"
+              sx={{
+                color: "white",
+                borderColor: "white",
+                textTransform: "none",
+                "&:hover": {
+                  background: "white",
+                  color: "#0f53b9ff",
+                },
+              }}
+            >
+              Login
+            </Button>
           </List>
         </Box>
       </Drawer>
