@@ -8,7 +8,7 @@ function Bookings() {
 
   const fetchBookings = async () => {
     try {
-      return await api.get("/getEvent");
+      return await api.get("/viewEvent");
     } catch (error){
         throw error;
     }

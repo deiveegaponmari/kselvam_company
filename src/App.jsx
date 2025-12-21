@@ -11,8 +11,8 @@ import Services from './pages/Services';
 import Events from './pages/Events';
 import Equipment from './pages/Equipment';
 import Contact from './pages/Contact';
+import Bookings from './pages/admin/Bookings';
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
@@ -26,6 +26,7 @@ function App() {
         <Route path='/events' element={<PublicLayout><Events/></PublicLayout>}></Route>
         <Route path='/equipments' element={<PublicLayout><Equipment/></PublicLayout>}></Route>
         <Route path='/contact' element={<PublicLayout><Contact/></PublicLayout>}></Route>
+        <Route path='/admin/bookings' element={<AuthLayout><Bookings/></AuthLayout>}></Route>
       </Routes>
     </Router>
     </>
