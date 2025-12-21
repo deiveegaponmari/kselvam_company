@@ -107,6 +107,7 @@ function Navbar() {
               to="/login"
               variant="outlined"
               sx={{
+                display: { xs: "block", md: "block" } ,
                 color: "white",
                 borderColor: "white",
                 textTransform: "none",
