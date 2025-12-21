@@ -14,7 +14,6 @@ import {
 } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
-import api from "../api/apiConfig";
 
 function Navbar() {
   const navigate = useNavigate();
@@ -22,6 +21,8 @@ function Navbar() {
 
   const role = localStorage.getItem("role");
   const isAdmin = role === "Admin";
+
+  const isLoggedIn = Boolean(localStorage.getItem("token"));
 
   const links = [
     { label: "Home", path: "/" },
@@ -31,6 +32,11 @@ function Navbar() {
     { label: "Equipments", path: "/equipments" },
     { label: "Contact", path: "/contact" },
   ];
+  const handleLogout = () => {
+    localStorage.clear();
+    navigate("/login");
+  };
+
   return (
     <>
       <AppBar
@@ -86,6 +92,30 @@ function Navbar() {
                 {item.label}
               </Button>
             ))}
+            {!isLoggedIn && (
+              <Button
+                component={Link}
+                to="/login"
+                variant="outlined"
+                sx={{
+                  color: "white",
+                  borderColor: "white",
+                  textTransform: "none",
+                  "&:hover": {
+                    background: "white",
+                    color: "#0f53b9ff",
+                  },
+                }}
+              >
+                Login
+              </Button>
+            )}
+            {isLoggedIn && (
+              <Button onClick={handleLogout} sx={{ color: "white" }}>
+                Logout
+              </Button>
+            )}
+
             {/* ✅ Admin-only Bookings */}
             {isAdmin && (
               <Button
@@ -101,23 +131,6 @@ function Navbar() {
                 Bookings
               </Button>
             )}
-            {/* ✅ LOGIN BUTTON (Desktop) */}
-            <Button
-              component={Link}
-              to="/login"
-              variant="outlined"
-              sx={{
-                color: "white",
-                borderColor: "white",
-                textTransform: "none",
-                "&:hover": {
-                  background: "white",
-                  color: "#0f53b9ff",
-                },
-              }}
-            >
-              Login
-            </Button>
           </Box>
           {/* Mobile Menu Icon */}
           <IconButton
@@ -131,17 +144,14 @@ function Navbar() {
 
       {/* Drawer for Mobile */}
       <Drawer anchor="left" open={open} onClose={() => setOpen(false)}>
-        <Box sx={{ width: 250, padding: 2 }}>
+        <Box sx={{ width: 250, p: 2, overflowY: "auto" }}>
           <Typography
             variant="h6"
-            sx={{
-              marginBottom: 2,
-              fontWeight: "bold",
-              textAlign: "center",
-            }}
+            sx={{ mb: 2, fontWeight: "bold", textAlign: "center" }}
           >
             Menu
           </Typography>
+
           <List>
             {links.map((item) => (
               <ListItem key={item.label} disablePadding>
@@ -150,11 +160,39 @@ function Navbar() {
                   to={item.path}
                   onClick={() => setOpen(false)}
                 >
-                  <ListItemText primary={item.label} />
+                  <ListItemText
+                    primary={item.label}
+                    primaryTypographyProps={{ color: "black" }}
+                  />
                 </ListItemButton>
               </ListItem>
             ))}
-            {/* ✅ Admin-only Bookings (Mobile) */}
+
+            {!isLoggedIn && (
+              <ListItem disablePadding>
+                <ListItemButton
+                  component={Link}
+                  to="/login"
+                  onClick={() => setOpen(false)}
+                >
+                  <ListItemText
+                    primary="Login"
+                    primaryTypographyProps={{
+                      color: "black",
+                      fontWeight: "bold",
+                    }}
+                  />
+                </ListItemButton>
+              </ListItem>
+            )}
+            {isLoggedIn && (
+              <ListItem disablePadding>
+                <ListItemButton onClick={handleLogout}>
+                  <ListItemText primary="Logout" />
+                </ListItemButton>
+              </ListItem>
+            )}
+
             {isAdmin && (
               <ListItem disablePadding>
                 <ListItemButton
@@ -162,20 +200,13 @@ function Navbar() {
                   to="/admin/bookings"
                   onClick={() => setOpen(false)}
                 >
-                  <ListItemText primary="Bookings" />
+                  <ListItemText
+                    primary="Bookings"
+                    primaryTypographyProps={{ color: "black" }}
+                  />
                 </ListItemButton>
               </ListItem>
             )}
-            {/* ✅ LOGIN BUTTON (Mobile – Correct) */}
-            <ListItem disablePadding>
-              <ListItemButton
-                component={Link}
-                to="/login"
-                onClick={() => setOpen(false)}
-              >
-                <ListItemText primary="Login" />
-              </ListItemButton>
-            </ListItem>
           </List>
         </Box>
       </Drawer>
