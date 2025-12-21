@@ -12,7 +12,7 @@ function EventsHome() {
   const fetchEvents = async () => {
     try {
       const response = await api.get("/getevent");
-      //console.log(response.data);
+      console.log(response.data);
       setEvent(response.data);
     } catch (error) {
       console.error("Error fetching slides:", error);
