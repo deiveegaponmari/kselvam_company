@@ -29,7 +29,7 @@ function Navbar() {
     { label: "Services", path: "/services" },
     { label: "Events", path: "/events" },
     { label: "Equipments", path: "/equipments" },
-    { label: "Contact", path: "/contact" },
+    { label: "Contact", path: "/contact" }
   ];
   return (
     <>
@@ -102,7 +102,9 @@ function Navbar() {
               </Button>
             )}
           </Box>
-
+            <Button 
+            component={Link}
+            to="/login">LOGIN</Button>
           {/* Mobile Menu Icon */}
           <IconButton
             sx={{ color: "white", display: { xs: "block", md: "none" } }}
