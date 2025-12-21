@@ -11,7 +11,7 @@ function Register() {
   const navigate = useNavigate();
   const handleRegister = async (e) => {
     e.preventDefault();
-    const finalRole=role.trim() === "" ? "User" : role;
+    const finalRole=role.trim() === "" ? "user" : role;
     try {
       const response = await api.post(
         "/register",
@@ -56,8 +56,8 @@ function Register() {
               focus:outline-none focus:ring-2 focus:ring-blue-500"
             >
               <option value="">-- Select Role --</option>
-              <option value="Admin">Admin</option>
-              <option value="User">User</option>
+              <option value="admin">Admin</option>
+              <option value="user">User</option>
             </select>
           </div>
           <div className="flex flex-col">
