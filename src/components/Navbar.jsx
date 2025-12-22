@@ -18,9 +18,12 @@ import MenuIcon from "@mui/icons-material/Menu";
 function Navbar() {
   const navigate = useNavigate();
   const [open, setOpen] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(
+    Boolean(localStorage.getItem("authToken"))
+  );
 
-  const isLoggedIn = Boolean(localStorage.getItem("authToken"));
-  const role = localStorage.getItem("role");
+  const [role, setRole] = useState(localStorage.getItem("role"));
+
   const isAdmin = role === "admin";
 
   const links = [
@@ -33,6 +36,8 @@ function Navbar() {
   ];
   const handleLogout = () => {
     localStorage.clear();
+    setIsLoggedIn(false);
+    setRole(null);
     navigate("/login");
   };
 
