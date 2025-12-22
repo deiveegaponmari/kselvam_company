@@ -5,7 +5,7 @@ function Bookings() {
   const [bookings, setBookings] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const fetchBookings = () => {
+  /* const fetchBookings = () => {
     return api.get("/viewEvent");
   };
 
@@ -19,7 +19,22 @@ function Bookings() {
         console.error("Error fetching bookings:", err);
         setLoading(false);
       });
-  }, []);
+  }, []); */
+  useEffect(() => {
+      fetchBookings();
+    }, []);
+  
+    const fetchBookings = async () => {
+      try {
+        const response = await api.get("/viewEvent");
+        console.log("view event ",response.data);
+          setBookings(response.data?.data || []);
+          setLoading(false);
+      } catch (error) {
+        console.error("Error fetching bookings:", error);
+        setLoading(false);
+      }
+    };
 
   if (loading) return <p>Loading bookings...</p>;
 
