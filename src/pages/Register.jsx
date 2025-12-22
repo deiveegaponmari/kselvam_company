@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import api from '../api/apiConfig';
+import api from "../api/apiConfig";
 
 function Register() {
   const [user, setUser] = useState("");
@@ -11,17 +11,14 @@ function Register() {
   const navigate = useNavigate();
   const handleRegister = async (e) => {
     e.preventDefault();
-    const finalRole=role.trim() === "" ? "user" : role;
+    const finalRole = role.trim() === "" ? "user" : role;
     try {
-      const response = await api.post(
-        "/register",
-        {
-          userName: user,
-          email: email,
-          password: password,
-          role:finalRole
-        }
-      );
+      const response = await api.post("/register", {
+        userName: user,
+        role: finalRole,
+        email: email,
+        password: password,
+      });
       console.log("Registration successfull", response);
       if (response.status === 200) {
         navigate("/login");
@@ -48,7 +45,8 @@ function Register() {
           </div>
           <div className="flex flex-col">
             <label className="text-gray-600 font-medium mb-1">Role</label>
-            <select value={role}
+            <select
+              value={role}
               type="text"
               placeholder="Select Your Role"
               onChange={(e) => setRole(e.target.value)}
