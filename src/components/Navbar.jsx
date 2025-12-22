@@ -21,7 +21,7 @@ function Navbar() {
 
   const isLoggedIn = Boolean(localStorage.getItem("authToken"));
   const role = localStorage.getItem("role");
-  const isAdmin = role === "Admin";
+  const isAdmin = role === "admin";
 
   const links = [
     { label: "Home", path: "/" },
